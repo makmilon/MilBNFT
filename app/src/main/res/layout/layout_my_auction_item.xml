@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.fragment.auctions.my_auction.MyAuctionsItemViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{viewModel::onItemClick}"
+        android:background="@drawable/hud_cover_radius"
+        >
+
+        <!--  app:setImageUrl='@{viewModel.mImage}'-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_imageView"
+            android:layout_width="126sp"
+            android:layout_height="126sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/dummy_hud_one"
+            app:setImageUrl="@{viewModel.mImage}"
+            />
+
+        <TextView
+            android:id="@+id/tv_min_bid_text"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:text="Min Bid"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_11"
+            android:textColor="@color/light_black"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:singleLine="true"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_min_bid"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            tools:text="0.01 ETH"
+            android:text="@{viewModel.mPrice}"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/text_color"
+            android:singleLine="true"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintTop_toBottomOf="@+id/tv_min_bid_text"
+            app:layout_constraintStart_toEndOf="@+id/iv_imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            tools:text="Toji 100 #1947"
+            android:text="@{viewModel.mTitle}"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/light_black"
+            android:singleLine="true"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintTop_toBottomOf="@+id/tv_min_bid"
+            app:layout_constraintStart_toEndOf="@+id/iv_imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+      <!--  <TextView
+            android:id="@+id/tv_start_date"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.mStartDateTime}"
+            tools:text="Start Date : 21/02/2022, 10:30 PM"
+            android:textColor="@color/light_black"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_12"
+            android:singleLine="true"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintTop_toBottomOf="@+id/tv_text"
+            app:layout_constraintStart_toEndOf="@+id/iv_imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            />-->
+        <TextView
+            android:id="@+id/tv_end_date"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.mEndDateTime}"
+            tools:text="End Date : 21/05/2022, 11:30 PM"
+            android:textColor="@color/light_black"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_12"
+            android:singleLine="true"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintTop_toBottomOf="@+id/tv_text"
+            app:layout_constraintStart_toEndOf="@+id/iv_imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

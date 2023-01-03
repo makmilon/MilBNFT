@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.fragment.product_details.adapter.SizeItemViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:background="@drawable/size_cover"
+        android:layout_marginEnd="10sp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="45sp"
+            android:layout_height="45sp"
+            tools:text="XXXL"
+            android:text="@{viewModel.mTextSize}"
+            android:background="@{viewModel.isTrueItem ? @drawable/size_cover_fill : @drawable/size_cover}"
+            android:textColor="@{viewModel.isTrueItem ? @color/white : @color/app_color}"
+            android:onClick="@{viewModel::onItemClick}"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_12"
+            android:gravity="center"
+            android:singleLine="true"
+            android:fontFamily="@font/poppins_semibold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

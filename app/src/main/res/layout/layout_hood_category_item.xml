@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.fragment.home.hud_and_auctions.HoodCattegoryItemViewModel" />
+    </data>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        app:cardBackgroundColor="@color/tab_un_selected"
+        app:cardCornerRadius="@dimen/_10sdp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel::onItemClick}"
+            android:background="@drawable/hud_cover_radius"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_imageView"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/dummy_hud_one"
+                app:setImageUrl="@{viewModel.mImage}"
+                />
+
+            <TextView
+                android:id="@+id/tv_total_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="2 Left"
+                android:text="@{viewModel.mTotalCount+ ` Items`}"
+                android:layout_gravity="center"
+                android:textSize="@dimen/sp_10"
+                android:padding="@dimen/_3sdp"
+                android:background="@color/app_color"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:singleLine="true"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Toji 100 #1947"
+                android:text="@{viewModel.mTitle}"
+                android:layout_gravity="center"
+                android:textSize="@dimen/sp_14"
+                android:padding="@dimen/_5sdp"
+                android:background="@color/app_color"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:singleLine="true"
+                android:fontFamily="@font/poppins_bold"
+                app:layout_constraintTop_toBottomOf="@+id/iv_imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable-v24/ic_favorite.xml" value="0.184" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable-v24/search_bg.xml" value="0.176" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/fade_map_bg.xml" value="0.176" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/hud_cover_radius.xml" value="0.184" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_arrow_down.xml" value="0.184" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_arrow_next.xml" value="0.173" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_arrow_up.xml" value="0.184" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_bnft_text.xml" value="0.1605" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_crosshairs_gps_black_24dp.xml" value="0.176" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_down.xml" value="0.173" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_favorite_fill.xml" value="0.176" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_go_back.xml" value="0.184" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_group_4159.xml" value="0.176" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_heart.xml" value="0.184" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_mappin_black.xml" value="0.176" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_refresh_black_24dp.xml" value="0.176" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_share.xml" value="0.184" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_unactive_dot.xml" value="0.1605" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_walletconnect.xml" value="0.172" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/ic_white_circle.xml" value="0.184" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/icon_white_hud.xml" value="0.121" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/radio_bg.xml" value="0.172" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/rounded_black.xml" value="0.121" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/rounded_gray.xml" value="0.121" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/search_cell_design.xml" value="0.176" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/size_cover.xml" value="0.176" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/size_cover_fill.xml" value="0.176" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/drawable/tabs_selector.xml" value="0.1605" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/font/montserrat.xml" value="0.27589743589743587" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/font/montserrat_bold.xml" value="0.27589743589743587" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/activity_dashboard.xml" value="0.264" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/activity_location.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/activity_select_location.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/bottom_navigation_menu.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/empty_item.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/expand_child_layout.xml" value="0.2453125" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/expand_parent_layout.xml" value="0.2453125" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/filter_category_item.xml" value="0.24635416666666668" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_account.xml" value="0.264" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_add_address.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_auction.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_category.xml" value="0.24635416666666668" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_checkout.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_cms.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_contact_us.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_details.xml" value="0.264" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_edit_profile.xml" value="0.264" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_faq.xml" value="0.2453125" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_favorite.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_filter.xml" value="0.24635416666666668" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_home.xml" value="0.27303754266211605" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_my_address.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_my_auction.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_my_order.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_notification.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_order_detail.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_public_notification.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_search.xml" value="0.2196307094266278" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_sort_by.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_status.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/fragment_thank_you.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_address_item.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_auction_item.xml" value="0.4" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_banner_slider.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_bid_history_item.xml" value="0.2" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_carouse_item.xml" value="0.2359375" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_checkout_item.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_dropped_item.xml" value="0.2359375" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_empty.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_faqs_item.xml" value="0.2453125" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_favorite_item.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_hood_category_item.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_hoodies_item.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_my_auction_item.xml" value="0.264" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_my_order_item.xml" value="0.264" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_nootification_item.xml" value="0.2359375" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_notification_item.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_order_details_item.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_place_bid_popup.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_product_detail_item.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_properties_item.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_resale_bid_popup.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_resale_popup.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/layout_size_item.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/loader_dialog.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/logout_popup.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/navigation_menu.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/session_expired_popup.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/toolbar_layout.xml" value="0.25" />
+        <entry key="..\:/Mobiria Solutions Project/BNFT Project/BNFT_Android/app/src/main/res/layout/welcome_popup.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

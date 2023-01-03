@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.auth.LoginViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/matchMatch"
+        android:background="@color/app_color"
+        tools:context=".ui.dashboard.MainActivity">
+
+        <RelativeLayout
+            style="@style/matchWrap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/app_icon"
+                style="@style/wrapWrap"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_bnft_text" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/matchWrap"
+                android:layout_below="@+id/app_icon"
+                android:layout_marginTop="@dimen/_140sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                >
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    style="@style/matchWrap"
+                    android:orientation="vertical"
+                    android:background="@color/app_color2"
+                    android:padding="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    >
+                    <TextView
+                        style="@style/wrapWrap"
+                        android:text="@string/connect_to_wallet"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="@dimen/_55sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/sp_24"
+                        android:fontFamily="@font/poppins_semibold"
+                        />
+
+                    <TextView
+                        style="@style/wrapWrap"
+                        android:text="@string/please_login_to_your_account"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/sp_13"
+                        android:fontFamily="@font/poppins_regular"
+                        />
+
+                    <RelativeLayout
+                        style="@style/matchWrap"
+                        android:minHeight="@dimen/sp_50"
+                        android:background="@color/app_color"
+                        android:layout_marginTop="@dimen/sp_30"
+                        android:onClick="@{viewModel::onMetamaskClick}"
+                        >
+                        <ImageView
+                            android:id="@+id/iv_metamask"
+                            style="@style/wrapWrap"
+                            android:src="@drawable/ic_metamask"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            />
+                        <TextView
+                            style="@style/wrapWrap"
+                            android:text="@string/metamask"
+                            android:textColor="@color/white"
+                            android:layout_toRightOf="@+id/iv_metamask"
+                            android:layout_toLeftOf="@+id/iv_metamask_next"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            android:layout_gravity="center_horizontal"
+                            android:textSize="@dimen/sp_12"
+                            android:fontFamily="@font/poppins_medium"
+                            />
+
+
+                        <ImageView
+                            android:id="@+id/iv_metamask_next"
+                            style="@style/wrapWrap"
+                            android:src="@drawable/ic_next_arrow"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:layout_centerVertical="true"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        style="@style/matchWrap"
+                        android:minHeight="@dimen/sp_50"
+                        android:background="@color/app_color"
+                        android:layout_marginTop="@dimen/sp_20"
+                        android:onClick="@{viewModel::onWalletConnectClick}"
+                        >
+<!-- -->
+
+                        <dev.pinkroom.walletconnectkit.WalletConnectButton
+                            android:id="@+id/walletConnectButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00ffffff"
+
+                            />
+
+                        <ImageView
+                            android:id="@+id/iv_walletconnect"
+                            style="@style/wrapWrap"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            android:src="@drawable/ic_walletconnect_" />
+
+                        <TextView
+                            style="@style/wrapWrap"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            android:layout_toLeftOf="@+id/iv_walletconnect_next"
+                            android:layout_toRightOf="@+id/iv_walletconnect"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/walletconnect"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_12" />
+
+
+                        <ImageView
+                            android:id="@+id/iv_walletconnect_next"
+                            style="@style/wrapWrap"
+                            android:src="@drawable/ic_next_arrow"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:layout_centerVertical="true"
+                            />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        style="@style/wrapWrap"
+                        android:text="@string/skip"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/sp_12"
+                        android:textAllCaps="true"
+                        android:padding="10sp"
+                        android:onClick="@{viewModel::onSkipClick}"
+                        android:fontFamily="@font/poppins_medium"
+                        />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:src="@drawable/white_huddy"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/app_icon"
+                />
+        </RelativeLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

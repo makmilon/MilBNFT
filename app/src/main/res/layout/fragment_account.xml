@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
+    >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.fragment.account.AccountViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/matchMatch"
+        android:background="@color/white"
+        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:background="@color/app_color"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="108sp"
+            android:layout_height="126sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:src="@drawable/dummy_profile"
+            app:setImageUrl="@{viewModel.mImage}"
+            />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            tools:text="Saurabh Bhardwaj"
+            android:text="@{viewModel.mName}"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="@dimen/sp_20"
+            android:textColor="@color/white"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_95sdp"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            tools:text="saurabh@gmail.com"
+            android:text="@{viewModel.mEmail}"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/app_color"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            style="@style/matchWrap"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:padding="10sp"
+                android:background="@drawable/hud_cover_radius"
+                android:onClick="@{viewModel::onEditProfileClick}"
+                android:drawableRight="@drawable/ic_arrow_next"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/edit_profile"
+                android:textColor="@color/app_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:padding="10sp"
+                android:background="@drawable/hud_cover_radius"
+                android:onClick="@{viewModel::onMyOrdersClick}"
+                android:drawableRight="@drawable/ic_arrow_next"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/my_orders"
+                android:textColor="@color/app_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:padding="10sp"
+                android:background="@drawable/hud_cover_radius"
+                android:onClick="@{viewModel::onMyAuctionClick}"
+                android:drawableRight="@drawable/ic_arrow_next"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/my_auction"
+                android:textColor="@color/app_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:padding="10sp"
+                android:background="@drawable/hud_cover_radius"
+                android:onClick="@{viewModel::onMyAddressClick}"
+                android:drawableRight="@drawable/ic_arrow_next"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/my_address"
+                android:textColor="@color/app_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:padding="10sp"
+                android:background="@drawable/hud_cover_radius"
+                android:onClick="@{viewModel::onFavoritesClick}"
+                android:drawableRight="@drawable/ic_arrow_next"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/favorites"
+                android:textColor="@color/app_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:padding="10sp"
+                android:background="@drawable/hud_cover_radius"
+                android:onClick="@{viewModel::onLogoutClick}"
+                android:drawableRight="@drawable/ic_arrow_next"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/logout"
+                android:textColor="@color/app_color"
+                android:textSize="16sp" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

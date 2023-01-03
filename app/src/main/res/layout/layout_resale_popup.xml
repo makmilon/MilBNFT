@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.utils.dialog.ResaleDialogViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/matchWrap"
+        tools:background="@color/black"
+        tools:context=".ui.dashboard.MainActivity">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/matchWrap"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardBackgroundColor="@color/white"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/matchWrap"
+                android:paddingBottom="@dimen/_10sdp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/item_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hud_cover_radius"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+
+
+                    <!--  app:setImageUrl='@{viewModel.mImage}'-->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_imageView"
+                        android:layout_width="126sp"
+                        android:layout_height="126sp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:src="@drawable/dummy_hud_one"
+                        app:setImageUrl="@{viewModel.mProductImage}"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_order_placed"
+                        android:layout_width="wrap_content"
+                        android:minWidth="133sp"
+                        android:layout_height="40sp"
+                        android:background="@color/app_color"
+                        android:text="@string/request_for_resale"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/sp_12"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:onClick="@{viewModel.onResaleClick}"
+                        android:singleLine="true"
+                        android:fontFamily="@font/poppins_semibold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/tv_current_price"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:text="Price"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/sp_10"
+                        android:textColor="@color/text_color"
+                        android:singleLine="true"
+                        android:fontFamily="@font/poppins_regular"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_order_placed"
+                        app:layout_constraintStart_toEndOf="@+id/iv_imageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        tools:text="0.01 ETH"
+                        android:text="@{viewModel.mPrice}"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/sp_16"
+                        android:textColor="@color/text_color"
+                        android:singleLine="true"
+                        android:fontFamily="@font/poppins_bold"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_current_price"
+                        app:layout_constraintStart_toEndOf="@+id/iv_imageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/tv_transaction"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        tools:text="toji 100 #1947"
+                        android:text="@{viewModel.mTransaction}"
+                        android:ellipsize="middle"
+                        android:textSize="@dimen/sp_13"
+                        android:textColor="@color/text_color"
+                        android:singleLine="true"
+                        android:layout_marginEnd="10sp"
+                        android:fontFamily="@font/poppins_regular"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_price"
+                        app:layout_constraintStart_toEndOf="@+id/iv_imageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <View
+                    android:id="@+id/view_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_5sdp"
+                    android:background="@color/app_color_10_transparent"
+                    app:layout_constraintTop_toBottomOf="@+id/item_view"
+                    />
+
+                <!--for NFT Image Only-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_nft_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50sp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/hud_cover_radius"
+                    android:onClick="@{viewModel::onNftImageClick}"
+                    app:layout_constraintTop_toBottomOf="@+id/view_1"
+                    >
+                    <TextView
+                        android:id="@+id/tv_nft_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="35sp"
+                        android:gravity="start|center"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/nft_image"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="221sp"
+                        android:visibility="@{viewModel.isMFTImage ? View.VISIBLE : View.GONE, default = gone}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_nft_text"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:scaleType="centerCrop"
+                        tools:src="@drawable/dummy_nft_image"
+                        app:setImageUrl="@{viewModel.mMFTImage}"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@{viewModel.isMFTImage ? @drawable/ic_arrow_up : @drawable/ic_arrow_down, default = @drawable/ic_arrow_down}"
+                        app:layout_constraintTop_toTopOf="@id/tv_nft_text"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_nft_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginRight="@dimen/_10sdp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_5sdp"
+                    android:background="@color/app_color_10_transparent"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_nft_image"
+                    />
+
+
+            <!--for Details Only-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50sp"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/hud_cover_radius"
+                android:padding="10sp"
+                android:onClick="@{viewModel::onDetailsClick}"
+                app:layout_constraintTop_toBottomOf="@+id/view_2"
+                >
+                <TextView
+                    android:id="@+id/tv_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="35sp"
+                    android:gravity="start|center"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/matchWrap"
+                    android:padding="10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_details"
+                    android:visibility="@{viewModel.isDetails ? View.VISIBLE : View.GONE, default = gone}"
+
+                    >
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/layout_product_detail_item" />
+                 <!--   <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="@string/contract_address"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="@string/_0x0632_32b0"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="@string/token_id"
+                        app:layout_constraintTop_toBottomOf="@id/textView6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="4482"
+                        app:layout_constraintTop_toBottomOf="@id/textView7"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="@string/token_standard"
+                        app:layout_constraintTop_toBottomOf="@id/textView8"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="ERC-721"
+                        app:layout_constraintTop_toBottomOf="@id/textView9"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="@string/blockchain"
+                        app:layout_constraintTop_toBottomOf="@id/textView10"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="Ethereum"
+                        app:layout_constraintTop_toBottomOf="@id/textView11"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="@string/creator_fees"
+                        app:layout_constraintTop_toBottomOf="@id/textView12"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="6%"
+                        app:layout_constraintTop_toBottomOf="@id/textView13"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+-->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{viewModel.isDetails ? @drawable/ic_arrow_up : @drawable/ic_arrow_down, default = @drawable/ic_arrow_down}"
+                    app:layout_constraintTop_toTopOf="@id/tv_details"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_details"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/_10sdp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

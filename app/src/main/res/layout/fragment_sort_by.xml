@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.fragment.search.filter.sort_by.SortByViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/matchMatch"
+        android:background="@color/white"
+        android:padding="10sp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/low_to_high"
+            style="@style/matchWrap"
+            android:layout_marginTop="2sp"
+            android:background="@drawable/hud_cover_radius"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:text="Price: Low To High"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:textSize="@dimen/sp_16"
+                android:gravity="center_vertical"
+                android:textColor="@color/app_color"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:checked="@{viewModel.isTrue == 1 ? true : false}"
+                android:onClick="@{viewModel::onPriceLowToHighClick}"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/high_to_low"
+            style="@style/matchWrap"
+            android:layout_marginTop="15sp"
+            android:background="@drawable/hud_cover_radius"
+            app:layout_constraintTop_toBottomOf="@+id/low_to_high"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:text="Price: High To Low"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:textSize="@dimen/sp_16"
+                android:gravity="center_vertical"
+                android:textColor="@color/app_color"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:checked="@{viewModel.isTrue == 2 ? true : false}"
+                android:onClick="@{viewModel::onPriceHighToLowClick}"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/recently_added"
+            style="@style/matchWrap"
+            android:layout_marginTop="15sp"
+            android:background="@drawable/hud_cover_radius"
+            app:layout_constraintTop_toBottomOf="@+id/high_to_low"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:text="Recently Added"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:textSize="@dimen/sp_16"
+                android:gravity="center_vertical"
+                android:textColor="@color/app_color"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:checked="@{viewModel.isTrue == 3 ? true : false}"
+                android:onClick="@{viewModel::onRecentlyAddedClick}"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/btn_apply"
+            android:layout_width="148sp"
+            android:layout_height="40sp"
+            android:background="@color/app_color"
+            android:text="Apply"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="@dimen/sp_16"
+            android:textAllCaps="true"
+            android:onClick="@{viewModel::onApplyClick}"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginBottom="@dimen/_65sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.utils.dialog.ResaleBidDialogViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/matchWrap"
+        tools:background="@color/black"
+        tools:context=".ui.dashboard.MainActivity">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/matchWrap"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardBackgroundColor="@color/white"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/matchWrap"
+                android:paddingBottom="@dimen/_10sdp"
+                >
+
+                <!--  app:setImageUrl='@{viewModel.mImage}'-->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_imageView"
+                    android:layout_width="126sp"
+                    android:layout_height="126sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:src="@drawable/dummy_hud_one"
+                    app:setImageUrl="@{viewModel.mImage}"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_details"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imageView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    >
+
+                    <!--android:text="@{viewModel.mDateTime}"-->
+                    <TextView
+                        android:id="@+id/tv_current_price_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Price"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/sp_10"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:textColor="@color/light_black"
+                        android:maxLines="1"
+                        android:layout_marginTop="1sp"
+                        android:fontFamily="@font/poppins_regular"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <!--  android:text="@{viewModel.mPrice}"-->
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="0.01 ETH"
+                        android:text="@{viewModel.mPrice}"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/sp_22"
+                        android:textColor="@color/text_color"
+                        android:singleLine="true"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_current_price_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_text_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Toji 100 #1947"
+                        android:text="@{viewModel.mTransactionHash}"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/sp_16"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:textColor="@color/text_color"
+                        android:singleLine="true"
+                        android:layout_marginEnd="10sp"
+                        android:fontFamily="@font/poppins_semibold"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_price"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layout_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="45sp"
+                        android:orientation="horizontal"
+                        android:layout_margin="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_text_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:weightSum="1"
+                        >
+                        <EditText
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".7"
+                            android:background="@color/tab_un_selected"
+                            android:hint="@string/min_bid_amount"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:textSize="14sp"
+                            android:text="@={viewModel.mResalePrice}"
+                            android:fontFamily="@font/poppins_bold"
+                            android:autofillHints="0.01" />
+
+                        <TextView
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3"
+                            android:background="@color/app_color"
+                            android:text="@string/eth"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/poppins_bold"
+                            />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/btn_end_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:background="@color/tab_un_selected"
+                    android:hint="@string/end_date"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="@dimen/sp_15"
+                    android:text="@{viewModel.mEndDate}"
+                    android:onClick="@{viewModel::onEndDateClick}"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_details"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/btn_bid_now"
+                    android:layout_width="199sp"
+                    android:layout_height="45sp"
+                    android:background="@color/app_color"
+                    android:text="@string/proceed"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/sp_15"
+                    android:onClick="@{viewModel::onProceedClick}"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_end_date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

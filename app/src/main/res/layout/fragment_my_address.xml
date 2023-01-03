@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
+    >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.fragment.my_address.MyAddressViewModel"
+            />
+
+    </data>
+   <!-- <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:scrollbars="none"
+        >-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/matchMatch"
+            android:background="@color/white"
+            android:paddingBottom="75sp"
+            >
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@color/app_color"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/layout_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeColor="@color/light_black"
+                app:strokeWidth="1dp"
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <fragment
+                        android:id="@+id/mapContainer"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="98sp"
+                        android:layout_height="92sp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_marker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:src="@drawable/ic_marker_black"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/mapContainer"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="@string/current_location"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/app_color"
+                        android:singleLine="true"
+                        android:text="@{viewModel.mAddressTitle}"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/iv_marker"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="Al Quoz - Al Quoz 2 - Dubai - United Arab Emirates"
+                        android:text="@{viewModel.mAddress}"
+                        android:textSize="@dimen/sp_12"
+                        android:textColor="@color/text_color"
+                        android:maxLines="2"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_marker"
+                        app:layout_constraintStart_toEndOf="@+id/mapContainer"
+                        />
+
+                    <TextView
+                        android:id="@+id/btn_edit"
+                        android:layout_width="75sp"
+                        android:layout_height="30sp"
+                        android:background="@color/app_color"
+                        android:text="@string/edit"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/sp_12"
+                        android:onClick="@{viewModel::editCurrentAddress}"
+                        android:fontFamily="@font/poppins_medium"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:id="@+id/btn_use_my_current_location"
+                android:layout_width="220sp"
+                android:layout_height="40sp"
+                android:background="@color/app_color"
+                android:text="@string/use_my_current_location"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="@dimen/sp_12"
+                android:textAllCaps="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/layout_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/_5sdp"
+                android:paddingBottom="60sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_use_my_current_location"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/layout_address_item" />
+
+            <include layout="@layout/layout_empty"
+                android:id="@+id/empty_layout"/>
+
+
+            <TextView
+                android:id="@+id/btn_add_address"
+                android:layout_width="220sp"
+                android:layout_height="40sp"
+                android:background="@color/app_color"
+                android:text="@string/add_new_address"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="@dimen/sp_16"
+                android:textAllCaps="true"
+                android:layout_marginBottom="25sp"
+                android:onClick="@{viewModel::addNewAddressClickEvent}"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--</androidx.core.widget.NestedScrollView>-->
+
+</layout>

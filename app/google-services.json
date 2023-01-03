@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "968243156328",
+    "project_id": "bnft-367611",
+    "storage_bucket": "bnft-367611.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968243156328:android:d6c41573ba77fa44ca72dd",
+        "android_client_info": {
+          "package_name": "com.mobiria.bnft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "968243156328-sttd5ejk02jeqm1inlrvtcer7pq0bh8k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobiria.bnft",
+            "certificate_hash": "61059717e9699099ed8b8f9b27409d11575adcdc"
+          }
+        },
+        {
+          "client_id": "968243156328-ejjvll02vdrquq5111uv4oljv3ad8gn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP-DB5NsM3NOs6_O22JYxe7IOVFNWFQj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "968243156328-ejjvll02vdrquq5111uv4oljv3ad8gn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

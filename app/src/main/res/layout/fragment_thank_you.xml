@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/matchMatch"
+        android:background="@color/app_color2"
+        tools:context=".ui.dashboard.MainActivity">
+
+        <ImageView
+            android:id="@+id/appImage"
+            style="@style/wrapWrap"
+            android:src="@drawable/ic_bnft_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/_150sdp"
+            />
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thank You"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="@dimen/sp_20"
+            android:textAllCaps="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintTop_toBottomOf="@+id/appImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <TextView
+            android:id="@+id/textview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your booking has been completed"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="@dimen/sp_12"
+            android:textAllCaps="true"
+            android:fontFamily="@font/poppins_semibold"
+
+            app:layout_constraintTop_toBottomOf="@+id/textview1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout"
+            android:layout_width="240sp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textview2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/text_color2"
+            android:padding="5sp"
+            android:layout_marginTop="@dimen/_30sdp"
+            >
+
+            <TextView
+                android:id="@+id/textview3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Booking No."
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="5sp"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <TextView
+                android:id="@+id/textview4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#UD686725653BG"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="@dimen/sp_16"
+                android:textAllCaps="true"
+                android:fontFamily="@font/poppins_semibold"
+                app:layout_constraintTop_toBottomOf="@+id/textview3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/btn_back_to_home"
+            android:layout_width="155sp"
+            android:layout_height="45sp"
+            android:text="Back To Home"
+            android:background="@color/app_color"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="@dimen/sp_15"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginTop="70sp"
+            app:layout_constraintTop_toBottomOf="@+id/layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.fragment.product_details.BidHistoryItemViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+       style="@style/matchWrap"
+        android:padding="10sp"
+        android:layout_margin="2sp"
+        android:background="@drawable/hud_cover_radius"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_profile"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:src="@drawable/dummy_profile"
+            app:setImageUrl="@{viewModel.mImage}"
+            app:civ_border_color="@color/black"
+            app:civ_border_width="1sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_bid_placed_by_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bid_placed_by"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_12"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="@color/text_color"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_semibold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/civ_profile"
+            />
+        <TextView
+            android:id="@+id/tv_bid_placed_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/_0x0632_32b0"
+            android:text="@{viewModel.mBidPlacedBy}"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_10"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="@color/light_black"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_semibold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_bid_placed_by_text"
+            />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Sept 16, 2022 at 10:04 pm"
+            android:text="@{viewModel.mDateTime}"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_10"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="@color/light_black"
+            android:maxLines="1"
+            android:layout_marginTop="1sp"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bid_placed_by_text"
+            app:layout_constraintStart_toEndOf="@+id/civ_profile"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="0.01 ETH"
+            android:text="@{viewModel.mPrice}"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/text_color"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_date"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

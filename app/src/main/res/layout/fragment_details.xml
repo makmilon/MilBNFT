@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.fragment.product_details.DetailsViewModel" />
+    </data>
+
+    <!--  -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/_60sdp"
+        android:scrollbars="none"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/matchMatch"
+            android:background="@color/white"
+            >
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_image"
+                android:layout_width="match_parent"
+                android:layout_height="300sp"
+                android:background="@color/app_color"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    app:setImageUrl="@{viewModel.mProductImage}"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_resale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:padding="10sp"
+                android:visibility="@{viewModel.isTrue ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_image"
+                android:background="@drawable/hud_cover_radius"
+                >
+                <TextView
+                    android:id="@+id/textView01"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:text="Highest Bid"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="@dimen/sp_10"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <TextView
+                    android:id="@+id/textView02"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    tools:text="0.01 ETH"
+                    android:text="@{viewModel.mMinBidPrice}"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="@dimen/sp_22"
+                    android:textColor="@color/light_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView01"
+                    />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="155sp"
+                    android:layout_height="45sp"
+                    android:orientation="horizontal"
+                    android:onClick="@{viewModel::onClickBidNow}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:visibility="@{viewModel.isAuction ? View.VISIBLE : View.GONE}"
+                    android:background="@color/app_color"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_wallet"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="45sp"
+                        android:text="@string/place_bid"
+                        android:gravity="center"
+                        android:background="@color/app_color"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="@dimen/sp_15"
+                        android:textColor="@color/white"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/app_color_10"
+                    app:layout_constraintTop_toBottomOf="@+id/textView02"
+                    />
+                <TextView
+                    android:id="@+id/tv_sale_end"
+                    android:layout_width="0sp"
+                    android:layout_height="@dimen/_30sdp"
+                    tools:text="Sale ends June 4, 2022 at 11:29am GMT+5:30 "
+                    android:text="@{viewModel.mProductDetails.product.description}"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/sp_10"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view1"
+                    />
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/app_color_10"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_sale_end"
+                    />
+
+                    <TextView
+                        android:id="@+id/tv_by"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30sp"
+                        android:text="@string/by"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="@dimen/sp_10"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view2"
+                        />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="35sp"
+                    android:layout_height="35sp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_by"
+                    app:layout_constraintTop_toBottomOf="@+id/view2"
+                    android:src="@drawable/dummy_profile"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    app:civ_border_width="1sp"
+                    app:civ_border_color="@color/border_color"
+                    app:setImageUrl="@{viewModel.mSellerImage}"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_OthersideMeta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30sp"
+                    tools:text="OthersideMeta"
+                    android:text="@{viewModel.mSellerName}"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/sp_11"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/iv_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/view2"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_buy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:padding="10sp"
+                android:visibility="@{viewModel.isTrue ? View.GONE : View.VISIBLE}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_resale"
+                android:background="@drawable/hud_cover_radius"
+                >
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:text="Price"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="@dimen/sp_10"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    tools:text="0.01 ETH"
+                    android:text="@{viewModel.mProductDetails.product.price}"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="@dimen/sp_22"
+                    android:textColor="@color/light_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView1"
+                    />
+
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:text="Select Size"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/light_black"
+                    android:layout_marginTop="10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="6"
+                    tools:listitem="@layout/layout_size_item" />
+
+             <!--   <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="47sp"
+                    android:layout_height="45sp"
+                    android:text="-"
+                    android:gravity="center"
+                    android:background="@color/app_color"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="@dimen/sp_15"
+                    android:onClick="@{viewModel::onMinusClick}"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2"
+                    />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="61sp"
+                    android:layout_height="45sp"
+                    android:text="@{``+viewModel.mProductCount}"
+                    android:gravity="center"
+                    tools:text="2"
+                    android:background="@color/tab_un_selected"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="@dimen/sp_15"
+                    android:textColor="@color/app_color"
+                    app:layout_constraintStart_toEndOf="@+id/textView3"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2"
+                    />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="47sp"
+                    android:layout_height="45sp"
+                    android:text="+"
+                    android:onClick="@{viewModel::onPlusClick}"
+                    android:gravity="center"
+                    android:background="@color/app_color"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="@dimen/sp_15"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/textView4"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2"
+                    />-->
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="155sp"
+                    android:layout_height="45sp"
+                    android:orientation="horizontal"
+                    android:onClick="@{viewModel::onClickBuyNow}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@color/app_color"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_wallet"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="45sp"
+                        android:text="@string/buy_now"
+                        android:gravity="center"
+                        android:background="@color/app_color"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="@dimen/sp_15"
+                        android:textColor="@color/white"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--for NFT Image Only-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_nft_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50sp"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/hud_cover_radius"
+                android:padding="10sp"
+                android:onClick="@{viewModel::onNftImageClick}"
+                app:layout_constraintTop_toBottomOf="@+id/layout_buy"
+                >
+                <TextView
+                    android:id="@+id/tv_nft_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="45sp"
+                    android:gravity="start|center"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/nft_image"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="221sp"
+                    android:visibility="@{viewModel.isMFTImage ? View.VISIBLE : View.GONE, default = gone}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_nft_text"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:scaleType="centerCrop"
+                    app:setImageUrl="@{viewModel.mMFTImage}"
+                    />
+
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{viewModel.isMFTImage ? @drawable/ic_arrow_up : @drawable/ic_arrow_down, default = @drawable/ic_arrow_down}"
+                    app:layout_constraintTop_toTopOf="@id/tv_nft_text"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_nft_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginRight="@dimen/_10sdp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--for About Collection Only-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_about_collection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50sp"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/hud_cover_radius"
+                android:padding="10sp"
+                android:onClick="@{viewModel::onAboutCollectionClick}"
+                app:layout_constraintTop_toBottomOf="@+id/layout_nft_image"
+                >
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="45sp"
+                    android:gravity="start|center"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/about_collections"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_answer"
+                    android:visibility="@{viewModel.isAboutCollection ? View.VISIBLE : View.GONE, default = gone}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/text_color2"
+                    android:textSize="12sp"
+                    android:text="@{viewModel.mAboutCollection}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                    />
+                <ImageView
+                    android:id="@+id/arrow_up_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{viewModel.isAboutCollection ? @drawable/ic_arrow_up : @drawable/ic_arrow_down, default = @drawable/ic_arrow_down}"
+                    app:layout_constraintTop_toTopOf="@id/tv_title"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginRight="@dimen/_10sdp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <!--for Properties Only-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_properties"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50sp"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/hud_cover_radius"
+                android:padding="10sp"
+                android:onClick="@{viewModel::onPropertiesClick}"
+                app:layout_constraintTop_toBottomOf="@+id/layout_about_collection"
+                >
+                <TextView
+                    android:id="@+id/tv_properties"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="45sp"
+                    android:gravity="start|center"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/properties"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{viewModel.isProperties ? @drawable/ic_arrow_up : @drawable/ic_arrow_down, default = @drawable/ic_arrow_down}"
+                    app:layout_constraintTop_toTopOf="@id/tv_properties"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_properties"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginRight="@dimen/_10sdp"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_properties"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:visibility="@{viewModel.isProperties ? View.VISIBLE : View.GONE, default = gone}"
+                    android:layout_marginTop="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_properties"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="6"
+                    tools:listitem="@layout/layout_properties_item" />
+                <!--<TextView
+                    android:visibility="@{viewModel.isProperties ? View.VISIBLE : View.GONE, default = gone}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/text_color2"
+                    android:textSize="12sp"
+                    android:text="@{viewModel.mAboutCollection}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_properties"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{viewModel.isProperties ? @drawable/ic_arrow_up : @drawable/ic_arrow_down, default = @drawable/ic_arrow_down}"
+                    app:layout_constraintTop_toTopOf="@id/tv_properties"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_properties"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginRight="@dimen/_10sdp"/>
+                -->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--for Price History Only-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_pricee_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50sp"
+                android:visibility="@{viewModel.isTrue ? View.VISIBLE : View.GONE}"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/hud_cover_radius"
+                android:padding="10sp"
+                android:onClick="@{viewModel::onPriceHistoryClick}"
+                app:layout_constraintTop_toBottomOf="@+id/layout_properties"
+                >
+                <TextView
+                    android:id="@+id/tv_price_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="45sp"
+                    android:gravity="start|center"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/price_history"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    style="@style/matchWrap"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.isPriceHistory ? View.VISIBLE : View.GONE, default = gone}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_price_history"
+                    >
+<!--
+                    <TextView
+                        android:layout_width="91sp"
+                        android:layout_height="33sp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:paddingRight="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:drawablePadding="@dimen/_3sdp"
+                        android:text="@string/all_time"
+                        android:background="@color/app_color"
+                        android:drawableRight="@drawable/ic_down"
+                        android:drawableTint="@color/white"
+                        />-->
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="180sp"
+                        android:layout_above="@+id/seekBar1" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{viewModel.isPriceHistory ? @drawable/ic_arrow_up : @drawable/ic_arrow_down, default = @drawable/ic_arrow_down}"
+                    app:layout_constraintTop_toTopOf="@id/tv_price_history"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_price_history"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginRight="@dimen/_10sdp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--for Bid History Only-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_bid_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50sp"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/hud_cover_radius"
+                android:padding="10sp"
+                android:visibility="@{viewModel.isTrue ? View.VISIBLE : View.GONE}"
+                android:onClick="@{viewModel::onBidHistoryClick}"
+                app:layout_constraintTop_toBottomOf="@+id/layout_pricee_history"
+                >
+                <TextView
+                    android:id="@+id/tv_bid_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="45sp"
+                    android:gravity="start|center"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/bid_history"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_bid_history"
+                    android:visibility="@{viewModel.isBidHistory ? View.VISIBLE : View.GONE, default = gone}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bid_history"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/layout_bid_history_item" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{viewModel.isBidHistory ? @drawable/ic_arrow_up : @drawable/ic_arrow_down, default = @drawable/ic_arrow_down}"
+                    app:layout_constraintTop_toTopOf="@id/tv_bid_history"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_bid_history"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/_10sdp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <!--for Details Only-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50sp"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/hud_cover_radius"
+                android:padding="10sp"
+                android:onClick="@{viewModel::onDetailsClick}"
+                app:layout_constraintTop_toBottomOf="@+id/layout_bid_history"
+                >
+                <TextView
+                    android:id="@+id/tv_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="45sp"
+                    android:gravity="start|center"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   style="@style/matchWrap"
+                   android:paddingTop="10sp"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/tv_details"
+                   android:visibility="@{viewModel.isDetails ? View.VISIBLE : View.GONE, default = gone}"
+                   >
+
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/rv_details"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:background="@color/white"
+                       android:orientation="horizontal"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                       tools:itemCount="3"
+                       tools:listitem="@layout/layout_product_detail_item" />
+                  <!-- <TextView
+                       android:id="@+id/textView6"
+                       android:layout_width="0sp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_10sdp"
+                       android:fontFamily="@font/poppins_regular"
+                       android:textColor="@color/black"
+                       android:textSize="12sp"
+                       android:text="@string/contract_address"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       />
+                   <TextView
+                       android:id="@+id/textView7"
+                       android:layout_width="0sp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_10sdp"
+                       android:fontFamily="@font/poppins_medium"
+                       android:textColor="@color/black"
+                       android:textSize="12sp"
+                       android:text="@string/_0x0632_32b0"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       />
+
+                   <TextView
+                       android:id="@+id/textView8"
+                       android:layout_width="0sp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_10sdp"
+                       android:fontFamily="@font/poppins_regular"
+                       android:textColor="@color/black"
+                       android:textSize="12sp"
+                       android:text="@string/token_id"
+                       app:layout_constraintTop_toBottomOf="@id/textView6"
+                       app:layout_constraintStart_toStartOf="parent"
+                       />
+                   <TextView
+                       android:id="@+id/textView9"
+                       android:layout_width="0sp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_10sdp"
+                       android:fontFamily="@font/poppins_medium"
+                       android:textColor="@color/black"
+                       android:textSize="12sp"
+                       android:text="4482"
+                       app:layout_constraintTop_toBottomOf="@id/textView7"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       />
+
+
+                   <TextView
+                       android:id="@+id/textView10"
+                       android:layout_width="0sp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_10sdp"
+                       android:fontFamily="@font/poppins_regular"
+                       android:textColor="@color/black"
+                       android:textSize="12sp"
+                       android:text="@string/token_standard"
+                       app:layout_constraintTop_toBottomOf="@id/textView8"
+                       app:layout_constraintStart_toStartOf="parent"
+                       />
+                   <TextView
+                       android:id="@+id/textView11"
+                       android:layout_width="0sp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_10sdp"
+                       android:fontFamily="@font/poppins_medium"
+                       android:textColor="@color/black"
+                       android:textSize="12sp"
+                       android:text="ERC-721"
+                       app:layout_constraintTop_toBottomOf="@id/textView9"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       />
+
+                   <TextView
+                       android:id="@+id/textView12"
+                       android:layout_width="0sp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_10sdp"
+                       android:fontFamily="@font/poppins_regular"
+                       android:textColor="@color/black"
+                       android:textSize="12sp"
+                       android:text="@string/blockchain"
+                       app:layout_constraintTop_toBottomOf="@id/textView10"
+                       app:layout_constraintStart_toStartOf="parent"
+                       />
+                   <TextView
+                       android:id="@+id/textView13"
+                       android:layout_width="0sp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_10sdp"
+                       android:fontFamily="@font/poppins_medium"
+                       android:textColor="@color/black"
+                       android:textSize="12sp"
+                       android:text="Ethereum"
+                       app:layout_constraintTop_toBottomOf="@id/textView11"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       />
+                   <TextView
+                       android:id="@+id/textView14"
+                       android:layout_width="0sp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_10sdp"
+                       android:fontFamily="@font/poppins_regular"
+                       android:textColor="@color/black"
+                       android:textSize="12sp"
+                       android:text="@string/creator_fees"
+                       app:layout_constraintTop_toBottomOf="@id/textView12"
+                       app:layout_constraintStart_toStartOf="parent"
+                       />
+                   <TextView
+                       android:id="@+id/textView15"
+                       android:layout_width="0sp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_10sdp"
+                       android:fontFamily="@font/poppins_medium"
+                       android:textColor="@color/black"
+                       android:textSize="12sp"
+                       android:text="6%"
+                       app:layout_constraintTop_toBottomOf="@id/textView13"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       />
+-->
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{viewModel.isDetails ? @drawable/ic_arrow_up : @drawable/ic_arrow_down, default = @drawable/ic_arrow_down}"
+                    app:layout_constraintTop_toTopOf="@id/tv_details"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_details"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/_10sdp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_details"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_dropped_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:background="@color/white"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/more_from_the_collection"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_17"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/view_all"
+                        android:onClick="@{viewModel::onSimilarCollectionClick}"
+                        android:textColor="@color/text_color3"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_collection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/layout_dropped_item" />
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

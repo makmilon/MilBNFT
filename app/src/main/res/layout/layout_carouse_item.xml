@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.comman.carousel.CarouselItemViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:src="@drawable/white_huddy"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/skip" />
+
+    </LinearLayout>
+</layout>

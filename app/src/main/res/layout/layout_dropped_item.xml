@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.fragment.home.dropped.DroppedItemViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="170sp"
+        android:background="@drawable/hud_cover_radius"
+        android:paddingBottom="@dimen/_5sdp"
+        android:onClick="@{viewModel::onItemClick}"
+        android:layout_height="wrap_content">
+        <!--  app:setImageUrl='@{viewModel.mImage}'-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_imageView"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/dummy_hud_two"
+            app:setImageUrl="@{viewModel.mImage}"
+            />
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Toji 100 #1947"
+            android:text="@{viewModel.mTitle}"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/text_color"
+            android:gravity="center"
+            android:singleLine="true"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toBottomOf="@+id/iv_imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="0.01 ETH"
+            android:text="@{viewModel.mPrice}"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/text_color"
+            android:gravity="center"
+            android:singleLine="true"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintTop_toBottomOf="@+id/tv_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

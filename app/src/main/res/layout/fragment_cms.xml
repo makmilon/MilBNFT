@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.mobiria.bnft.ui.fragment.cms.CMSViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:scrollbars="none"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/matchMatch"
+            android:background="@color/white"
+            android:padding="10sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{viewmodel.mMessage}"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_medium"
+                tools:text="CMSViewModel"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

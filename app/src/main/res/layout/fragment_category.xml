@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/matchMatch"
+        android:background="@color/app_color"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="10"
+            tools:listitem="@layout/filter_category_item"
+            android:paddingBottom="@dimen/_55sdp"/>
+
+
+        <TextView
+            android:id="@+id/btn_apply"
+            android:layout_width="148sp"
+            android:layout_height="40sp"
+            android:background="@color/app_color"
+            android:text="Apply"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="@dimen/sp_16"
+            android:textAllCaps="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginBottom="@dimen/_65sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <include layout="@layout/layout_empty"
+            android:id="@+id/empty_layout"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

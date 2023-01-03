@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.fragment.notification.public_notification.PublicNotificationViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/_60sdp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_280"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="@{viewModel.isImage ? View.VISIBLE : View.GONE}"
+                app:setImageUrl='@{viewModel.imageUrl}' />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_16"
+                android:text="@{viewModel.title}"
+                android:textColor="@color/app_color"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                tools:text="Title" />
+
+            <TextView
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_16"
+                android:text="@{viewModel.message}"
+                android:textColor="@color/app_color"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                tools:text="Message" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

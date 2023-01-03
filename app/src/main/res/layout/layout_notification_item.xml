@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mobiria.bnft.ui.fragment.notification.NotificationItemViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+       style="@style/matchWrap"
+        android:padding="10sp"
+        android:layout_margin="2sp"
+        android:onClick="@{viewModel::onItemClick}"
+        android:background="@drawable/hud_cover_radius"
+        >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            tools:text="RE01652455451"
+            android:text="@{viewModel.mTitle}"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/text_color"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_semibold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_remove"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <ImageView
+            android:id="@+id/iv_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:onClick="@{viewModel::onClearNotificationClick}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:padding="5sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Your order placed successfully. for more information please check the request..."
+            android:text="@{viewModel.mDescription}"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/text_color"
+            android:maxLines="2"
+            android:layout_marginTop="5sp"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="28/04/2022"
+            android:text="@{viewModel.mDate}"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_11"
+            android:textColor="@color/text_color"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

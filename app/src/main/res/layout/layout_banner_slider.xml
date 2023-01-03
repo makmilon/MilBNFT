@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        style="?attr/materialCardViewElevatedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        app:cardBackgroundColor="@color/app_color"
+        app:cardElevation="@dimen/dp_0">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            >
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dummy_hud_one" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="GET"
+                        android:maxLines="3"
+                        android:gravity="center"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        />
+                  <!--  <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40sp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="On Best"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="22sp"
+                        android:textColor="@color/white"
+                        />-->
+                   <!-- <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40sp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="0.01 ETH"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="32sp"
+                        android:textColor="@color/white"
+                        />-->
+
+                <com.google.android.material.card.MaterialCardView
+                    style="?attr/materialCardViewElevatedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_marginTop="@dimen/sp_10"
+                    app:cardCornerRadius="@dimen/dp_10"
+                    app:cardElevation="@dimen/dp_0"
+                    >
+
+                    <TextView
+                        android:id="@+id/btn_explore_now"
+                        android:layout_width="120sp"
+                        android:layout_height="40sp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Explore Now"
+                        android:gravity="center"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="@dimen/sp_13"
+                        android:textColor="@color/app_color"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
